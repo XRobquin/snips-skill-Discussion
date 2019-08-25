@@ -1,6 +1,6 @@
-!/usr/bin/env python2
+#!/usr/bin/env python2
 --: coding utf-8 --
-``
+
 from hermes_python.hermes import Hermes
 store the names of your intents as global variables:
 INTENT_START_QUIZ = "start_lesson"
