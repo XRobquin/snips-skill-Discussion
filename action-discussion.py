@@ -1,6 +1,7 @@
 #!/usr/bin/env python2
 
 from hermes_python.hermes import Hermes
+from pytz import timezone
 
 MQTT_IP_ADDR = "localhost"
 MQTT_PORT = 1883
@@ -13,4 +14,4 @@ def discussion_voyage(hermes, intent_message):
 
 
 with Hermes(MQTT_ADDR) as h: 
-  h.subscribe_intents(discussion_voyage).start()
+  h.subscribe_intent(discussion_voyage).start()
