@@ -1,5 +1,4 @@
 #!/usr/bin/env python2
-
 from hermes_python.hermes import Hermes
 from pytz import timezone
 
@@ -8,8 +7,7 @@ MQTT_PORT = 1883
 MQTT_ADDR = "{}:{}".format(MQTT_IP_ADDR, str(MQTT_PORT))
 
 def discussion_voyage(hermes, intent_message): 
-  sentence = "Fantastique"
-  
+  sentence = "Fantastique"  
   hermes.publish_end_session(intent_message.session_id, sentence)
 
 
