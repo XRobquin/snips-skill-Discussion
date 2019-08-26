@@ -18,8 +18,8 @@ def discussion_voyage(hermes, intent_message):
   sentence += " j'ai toujours voulu visiter "
   sentence += lieu
   sentence += " comment etait-ce ?" 
-  hermes.publish_continue_session(intent_message.session_id, sentence, [ INTENT_REACTION ])
+  hermes.publish_end_session(intent_message.session_id, sentence)
 
 
 with Hermes(MQTT_ADDR) as h: 
-  h.subscribe_intent(INTENT_VOYAGE, discussion_voyage).start()
+  h.subscribe_intents(INTENT_VOYAGE, discussion_voyage).start()
