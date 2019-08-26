@@ -10,10 +10,10 @@ INTENT_VOYAGE = "voyage"
 INTENT_REACTION = "reaction"
 
 def discussion_voyage(hermes, intent_message): 
-  sentence = "Fantastique, dites-moi "
+  sentence = "Fantastique"
   
   hermes.publish_end_session(intent_message.session_id, sentence)
 
 
 with Hermes(MQTT_ADDR) as h: 
-  h.subscribe_intents(INTENT_VOYAGE, discussion_voyage).start()
+  h.subscribe_intents(discussion_voyage).start()
