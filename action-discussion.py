@@ -13,13 +13,13 @@ def discussion_voyage(hermes, intent_message):
   name = intent_message.slots.Proche.first().value
   lieu = intent_message.slots.Lieu.first().value
   action = intent_message.slots.Action.first().value
-  sentence = "Fantastique, dîtes-moi "
+  sentence = "Fantastique, dites-moi "
   sentence += name
-  sentence += " j'ai toujours révé de visiter "
+  sentence += " j'ai toujours voulu visiter "
   sentence += lieu
-  sentence += " comment était-ce ?" 
+  sentence += " comment etait-ce ?" 
   hermes.publish_continue_session(intent_message.session_id, sentence, [ INTENT_REACTION ])
 
 
 with Hermes(MQTT_ADDR) as h: 
-  h.subscribe_intent(INTENT_VOYAGE, discussion_voyage)
+  h.subscribe_intent(INTENT_VOYAGE, discussion_voyage).start()
