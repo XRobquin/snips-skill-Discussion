@@ -16,4 +16,4 @@ def discussion_voyage(hermes, intent_message):
 
 
 with Hermes(MQTT_ADDR) as h: 
-  h.subscribe_intents(discussion_voyage).start()
+  h.subscribe_intents(intent_received).start()
