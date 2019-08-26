@@ -9,15 +9,9 @@ MQTT_ADDR = "{}:{}".format(MQTT_IP_ADDR, str(MQTT_PORT))
 INTENT_VOYAGE = "voyage"
 INTENT_REACTION = "reaction"
 
-def discussion_voyage(hermes, intent_message):  
-  name = intent_message.slots.Proche.first().value
-  lieu = intent_message.slots.Lieu.first().value
-  action = intent_message.slots.Action.first().value
+def discussion_voyage(hermes, intent_message): 
   sentence = "Fantastique, dites-moi "
-  sentence += name
-  sentence += " j'ai toujours voulu visiter "
-  sentence += lieu
-  sentence += " comment etait-ce ?" 
+  
   hermes.publish_end_session(intent_message.session_id, sentence)
 
 
